@@ -6,14 +6,17 @@
 #include <GL/glut.h>
 
 /*
-SOM
-*/
+
+//SOM
+
 #include <SDL/SDL_mixer.h>
 #include <SDL/SDL.h>
 Mix_Music *musica = NULL; //- música de fundo
 Mix_Chunk *transito = NULL;
 Mix_Chunk *crash = NULL;
-
+Mix_Chunk *water = NULL;
+Mix_Chunk *victory = NULL;
+*/
 //Declaracoes das variaveis
 GLint mover = 0;
 GLint movercarro = 0;
@@ -963,75 +966,75 @@ void Colisao()
 {
    if ((mover - 10 == moversapox + 1) && (2 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((mover - 10 == moversapox + 2) && (2 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((mover - 10 == moversapox + 3) && (2 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((mover - 10 == moversapox + 4) && (2 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
 
    if ((movercarro - 10 == moversapox + 1) && (4 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 2) && (4 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 3) && (4 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 4) && (4 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
 
    if ((movercarro2 - 10 == moversapox + 1) && (6 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 2) && (6 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 3) && (6 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 4) && (6 == moversapoy + 1))
    {
-      Mix_PlayChannel(1, crash, 0);
+      //Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
       numeroMortes++;
    }
@@ -1051,11 +1054,13 @@ void Colisao1()
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira - 10 >= moversapox + 5) && (6 == moversapoy + 1))
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira - 10 == moversapox + 1) && (6 == moversapoy + 1))
       moversapox = movermadeira - 12;
@@ -1071,17 +1076,20 @@ void Colisao1()
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
 
    if ((movermadeira1 - 10 <= moversapox + 0) && (4 == moversapoy + 1))
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira1 - 10 >= moversapox + 5) && (4 == moversapoy + 1))
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira1 - 10 == moversapox + 1) && (4 == moversapoy + 1))
       moversapox = movermadeira1 - 13;
@@ -1097,17 +1105,20 @@ void Colisao1()
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
 
    if ((movermadeira2 - 10 <= moversapox + 0) && (2 == moversapoy + 1))
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira2 - 10 >= moversapox + 5) && (2 == moversapoy + 1))
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((movermadeira2 - 10 == moversapox + 1) && (2 == moversapoy + 1))
       moversapox = movermadeira2 - 13;
@@ -1123,6 +1134,7 @@ void Colisao1()
    {
       moversapoy = 6;
       numeroMortes++;
+      //Mix_PlayChannel(2, water, 0);
    }
    if ((1 == moversapoy + 1) && (lado == 1))
       lado = 2; //Mudanca de lado
@@ -1267,7 +1279,7 @@ void Desenha(void)
    {
    case 0:
       tempo = 20; //Nivel 1, velocidade dos carros
-      Mix_PlayChannel(-1, transito, 0);
+      //Mix_PlayChannel(-1, transito, 0);
       glClear(GL_COLOR_BUFFER_BIT);
       Pista();
       Colisao();
@@ -1294,7 +1306,7 @@ void Desenha(void)
       break;
    case 2:
       tempo = 35; //Nivel 2, velocidade dos carros
-      Mix_PlayChannel(-1, transito, 0);
+      //Mix_PlayChannel(-1, transito, 0);
       nivel = 2;
       glClear(GL_COLOR_BUFFER_BIT);
       Pista();
@@ -1322,7 +1334,7 @@ void Desenha(void)
       break;
    case 4:
       tempo = 50; //Nivel 3, velocidade dos carros
-      Mix_PlayChannel(-1, transito, 0);
+      //Mix_PlayChannel(-1, transito, 0);
       nivel = 3;
       glClear(GL_COLOR_BUFFER_BIT);
       Pista();
@@ -1350,6 +1362,8 @@ void Desenha(void)
       break;
    case 6:
       glClear(GL_COLOR_BUFFER_BIT);
+      //Mix_PauseMusic();
+      //Mix_PlayChannel(-1, victory, 0);
       Comentarios1();
       glutSwapBuffers();
       break;
@@ -1434,14 +1448,14 @@ void MenuSom(int op)
    {
    case 0:
    {
-      Mix_PauseMusic();
+      //Mix_PauseMusic();
    }
    break;
    }
 
    glutPostRedisplay();
 }
-
+/*
 //Controle do som
 void init()
 {
@@ -1457,8 +1471,10 @@ void carregar()
    musica = Mix_LoadMUS("theme.ogg");
    transito = Mix_LoadWAV("car.ogg");
    crash = Mix_LoadWAV("crash.ogg");
+   water = Mix_LoadWAV("water.ogg");
+   victory = Mix_LoadWAV("victory.ogg");
 }
-
+*/
 // Gerenciamento do menu principal
 void MenuPrincipal(int op)
 {
@@ -1531,9 +1547,9 @@ void AlteraTamanhoJanela(GLsizei w, GLsizei h)
 int main(int argc, char **argv)
 {
    glutInit(&argc, argv);
-   init();
-   carregar();
-   Mix_PlayMusic(musica, -1);
+  // init();
+  // carregar();
+  // Mix_PlayMusic(musica, -1);
 
    //E por fim a chamada para o OpenGL
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); //Modo para nao exibir rastros na tela
