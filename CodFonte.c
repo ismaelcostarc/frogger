@@ -1,7 +1,4 @@
-/*
-  Name: Street Frog
-  Description: Baseado no jogo de atari no qual o sapo tem que atravessar a avenida. 
-*/
+//Trabalho Final da disciplina Computação Gráfica
 
 #include <stdio.h> //Imput Output
 #include <GL/gl.h>
@@ -33,6 +30,7 @@ GLint tempo = 0;
 GLint lado = 0;
 
 int nivel = 1;
+int numeroMortes = 0;
 
 int W = 690;
 int H = 530;
@@ -967,63 +965,75 @@ void Colisao()
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((mover - 10 == moversapox + 2) && (2 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((mover - 10 == moversapox + 3) && (2 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((mover - 10 == moversapox + 4) && (2 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
 
    if ((movercarro - 10 == moversapox + 1) && (4 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 2) && (4 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 3) && (4 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro - 10 == moversapox + 4) && (4 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
 
    if ((movercarro2 - 10 == moversapox + 1) && (6 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 2) && (6 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 3) && (6 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((movercarro2 - 10 == moversapox + 4) && (6 == moversapoy + 1))
    {
       Mix_PlayChannel(1, crash, 0);
       moversapoy = 0;
+      numeroMortes++;
    }
    if ((7 == moversapoy + 1) && (lado == 0))
       lado = 1; //Mudanca de lado
@@ -1038,9 +1048,15 @@ void Colisao()
 void Colisao1()
 {
    if ((movermadeira - 10 <= moversapox + 0) && (6 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira - 10 >= moversapox + 5) && (6 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira - 10 == moversapox + 1) && (6 == moversapoy + 1))
       moversapox = movermadeira - 12;
    if ((movermadeira - 10 == moversapox + 2) && (6 == moversapoy + 1))
@@ -1052,12 +1068,21 @@ void Colisao1()
    if ((movermadeira == 24) && (6 == moversapoy + 1))
       moversapox = 0;
    if ((movermadeira == 24) && (6 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
 
    if ((movermadeira1 - 10 <= moversapox + 0) && (4 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira1 - 10 >= moversapox + 5) && (4 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira1 - 10 == moversapox + 1) && (4 == moversapoy + 1))
       moversapox = movermadeira1 - 13;
    if ((movermadeira1 - 10 == moversapox + 2) && (4 == moversapoy + 1))
@@ -1069,12 +1094,21 @@ void Colisao1()
    if ((movermadeira1 == 2) && (4 == moversapoy + 1))
       moversapox = 0;
    if ((movermadeira1 == 2) && (4 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
 
    if ((movermadeira2 - 10 <= moversapox + 0) && (2 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira2 - 10 >= moversapox + 5) && (2 == moversapoy + 1))
+   {
       moversapoy = 6;
+      numeroMortes++;
+   }
    if ((movermadeira2 - 10 == moversapox + 1) && (2 == moversapoy + 1))
       moversapox = movermadeira2 - 13;
    if ((movermadeira2 - 10 == moversapox + 2) && (2 == moversapoy + 1))
@@ -1086,8 +1120,10 @@ void Colisao1()
    if ((movermadeira2 == 2) && (2 == moversapoy + 1))
       moversapox = 0;
    if ((movermadeira2 == 2) && (2 == moversapoy + 1))
+   {
       moversapoy = 6;
-
+      numeroMortes++;
+   }
    if ((1 == moversapoy + 1) && (lado == 1))
       lado = 2; //Mudanca de lado
    if ((1 == moversapoy + 1) && (lado == 3))
@@ -1177,6 +1213,28 @@ void Comentarios()
    }
    break;
    }
+
+   {
+      glColor3f(1, 1, 1);
+      glRasterPos2f(13.0, 9);
+      char *p = (char *)"Numero de mortes: ";
+      while (*p != '\0')
+      {
+         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
+      }
+   }
+
+   {
+      glColor3f(1, 1, 1);
+      glRasterPos2f(20.0, 9);
+      char snum[5];
+      sprintf(snum, "%d", numeroMortes);
+      char *p = (char *)snum;
+      while (*p != '\0')
+      {
+         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
+      }
+   }
 }
 //Comentario final
 void Comentarios1()
@@ -1184,7 +1242,7 @@ void Comentarios1()
    {
       glColor3f(1, 1, 1);
       glRasterPos2f(9.0, 8.0);
-      char *p = (char *)"Street Frog";
+      char *p = (char *)"Frogger";
       while (*p != '\0')
       {
          glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
@@ -1194,7 +1252,7 @@ void Comentarios1()
    {
       glColor3f(1, 1, 1);
       glRasterPos2f(9.2, 6.0);
-      char *p = (char *)"Parabens! Voce Ganhou!!";
+      char *p = (char *)"Parabens! Voce Ganhou!";
       while (*p != '\0')
       {
          glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *p++);
@@ -1340,24 +1398,6 @@ void Mover(int key, int x, int y)
 //Funcoes para teclado (atribuicoes de teclas)
 void Teclado(unsigned char key, int x, int y)
 {
-   //Fazer o predio subir e descer com W e S
-   if (key == 119)
-   {
-      predioy += 1;
-   }
-   if (key == 115)
-   {
-      predioy -= 1;
-   }
-   //Limites minimo e maximo do predio
-   if (predioy < 0)
-   {
-      predioy = 0;
-   }
-   if (predioy > 2)
-   {
-      predioy = 2;
-   }
    //Tela cheia na tecla f
    if (key == 102)
    {
@@ -1386,7 +1426,7 @@ void MenuJanela(int op)
 
    glutPostRedisplay();
 }
-/*
+
 //Funcoes do menu
 void MenuSom(int op)
 {
@@ -1394,14 +1434,13 @@ void MenuSom(int op)
    {
    case 0:
    {
-      FSOUND_Close();
+      Mix_PauseMusic();
    }
    break;
    }
 
    glutPostRedisplay();
 }
-*/
 
 //Controle do som
 void init()
@@ -1433,12 +1472,12 @@ void CriaMenu()
    submenu1 = glutCreateMenu(MenuJanela);
    glutAddMenuEntry("Tela Cheia", 0);
 
-   //submenu2 = glutCreateMenu(MenuSom);
-   glutAddMenuEntry("Desligar o som", 0);
+   submenu2 = glutCreateMenu(MenuSom);
+   glutAddMenuEntry("Desligar a musica", 0);
 
    menu = glutCreateMenu(MenuPrincipal);
    glutAddSubMenu("Janela", submenu1);
-   // glutAddSubMenu("Som",submenu2);
+   glutAddSubMenu("Som", submenu2);
 
    glutAttachMenu(GLUT_RIGHT_BUTTON);
 }
@@ -1495,61 +1534,12 @@ int main(int argc, char **argv)
    init();
    carregar();
    Mix_PlayMusic(musica, -1);
-   //Inicia o som
-   /*
-   FSOUND_SAMPLE *samp1 = 0;               //cria um ponteiro para armazenar o som em mem�ria
-   if (FSOUND_GetVersion() < FMOD_VERSION) // verifica��o da vers�o do fmod caso a vers�o do FSOUND for menor que a do FMOD retorna uma menssagem de erro
-   {
-      printf("Error : You are using the wrong DLL version!  You should be using FMOD %.02f\n", FMOD_VERSION);
-      return 1;
-   }
-   //    Seleciona a sa�da de audio
-   FSOUND_SetOutput(FSOUND_OUTPUT_DSOUND);
-
-   //    Sele��o do driver
-   FSOUND_GetOutput();  // indentifica o tipo de saida
-   FSOUND_GetMixer();   // indentifica o mixer
-   FSOUND_SetDriver(0); // seta o driver de som que vai ser usado
-
-   //    Inicializando o FMOD
-   if (!FSOUND_Init(44100, 32, FSOUND_INIT_GLOBALFOCUS)) // se o valor do FSOUND_Init for 0 execute o tratamento de erro
-   {
-      printf("Error!\n");
-      printf("%s\n", FMOD_ErrorString(FSOUND_GetError()));
-      return 1;
-   }
-
-   // Carrengando o Sample
-   // PCM,44,100 Hz, 32 Bit, Mono ou uma mp3 ou outros formatos suportados pelo fmod
-   samp1 = FSOUND_Sample_Load(FSOUND_UNMANAGED, "paranoid.ogg", FSOUND_NORMAL | FSOUND_HW2D, 0, 0);
-   if (!samp1)
-   {
-      printf("Error!\n");
-      printf("%s\n", FMOD_ErrorString(FSOUND_GetError()));
-      return 1;
-   }
-
-   // Aqui fala qual maneira o sample ira tocar caso falhe excute o tratamento de erro
-   if (!FSOUND_Sample_SetMode(samp1, FSOUND_LOOP_NORMAL)) // o loop normal toca a musica continuamente ate o programa fechar
-   {
-      printf("Error!\n");
-      printf("%s\n", FMOD_ErrorString(FSOUND_GetError()));
-   }
-   // Aqui sera tocado o sample ,caso falhe, execute o tratamento de erro
-   if (!FSOUND_PlaySound(FSOUND_FREE, samp1))
-   {
-      printf("Error!\n");
-      printf("%s\n", FMOD_ErrorString(FSOUND_GetError()));
-   }
-   //Fim do codigo do som \\o  \o/   o//\o/
-*/
-   //Sleep(10000);  // executa o som durante 10 segundos     (Essa funcao esta desativada no Street Frog)
 
    //E por fim a chamada para o OpenGL
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB); //Modo para nao exibir rastros na tela
    glutInitWindowSize(W, H);                    //Tamanho da janela
    glutInitWindowPosition(50, 50);              //Localizacao inicial da janela
-   glutCreateWindow("Street Frog");             //Nome da janela
+   glutCreateWindow("Frogger");                 //Nome da janela
    glutKeyboardFunc(Teclado);                   //Chama as funcoes do teclado
    glutSpecialFunc(Mover);                      //Chama as funcoes especias do teclado (setas de movimento)
    Inicializa();
@@ -1564,8 +1554,4 @@ int main(int argc, char **argv)
    glutMouseFunc(GerenciaMouse);          //Ativa o botao direito
    glutMainLoop();
    //Final das funcoes do OpenGL
-
-   //    limpando a memoria e fechando o fmod (Som)
-   //   FSOUND_Sample_Free(samp1); // limpa a memoria ultilizada pelo ponteiro do sample
-   //   FSOUND_Close();            // encerra a API FMOD
 }
