@@ -32,6 +32,8 @@ GLint predioy = 0;
 GLint tempo = 0;
 GLint lado = 0;
 
+int nivel = 1;
+
 int W = 690;
 int H = 530;
 
@@ -1101,17 +1103,7 @@ void Comentarios()
 {
    {
       glColor3f(1, 1, 1);
-      glRasterPos2f(13.0, 11.0);
-      char *p = (char *)"Street Frog";
-      while (*p != '\0')
-      {
-         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, *p++);
-      }
-   }
-
-   {
-      glColor3f(1, 1, 1);
-      glRasterPos2f(13.0, 10.5);
+      glRasterPos2f(13.0, 12);
       char *p = (char *)"Avaliacao Final da Disciplina Computacao Grafica.";
       while (*p != '\0')
       {
@@ -1121,7 +1113,7 @@ void Comentarios()
 
    {
       glColor3f(1, 1, 1);
-      glRasterPos2f(13.0, 9.5);
+      glRasterPos2f(13.0, 11.5);
       char *p = (char *)"Objetivo: Atravesse a avenida sem ser atropelado, e o rio sem";
       while (*p != '\0')
       {
@@ -1131,7 +1123,7 @@ void Comentarios()
 
    {
       glColor3f(1, 1, 1);
-      glRasterPos2f(13.0, 9.0);
+      glRasterPos2f(13.0, 11.0);
       char *p = (char *)"cair do tronco. Va e volte para concluir os niveis de velocidade.";
       while (*p != '\0')
       {
@@ -1141,12 +1133,49 @@ void Comentarios()
 
    {
       glColor3f(1, 1, 1);
-      glRasterPos2f(13.0, 8.5);
+      glRasterPos2f(13.0, 10.5);
       char *p = (char *)"Comandos: Use as setas do teclado para movimentar o sapo.";
       while (*p != '\0')
       {
          glutBitmapCharacter(GLUT_BITMAP_HELVETICA_12, *p++);
       }
+   }
+
+   switch (nivel)
+   {
+   case 1:
+   {
+      glColor3f(1, 1, 1);
+      glRasterPos2f(13.0, 9.5);
+      char *p = (char *)"Nivel 1";
+      while (*p != '\0')
+      {
+         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
+      }
+   }
+   break;
+   case 2:
+   {
+      glColor3f(1, 1, 1);
+      glRasterPos2f(13.0, 9.5);
+      char *p = (char *)"Nivel 2";
+      while (*p != '\0')
+      {
+         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
+      }
+   }
+   break;
+   case 3:
+   {
+      glColor3f(1, 1, 1);
+      glRasterPos2f(13.0, 9.5);
+      char *p = (char *)"Nivel 3";
+      while (*p != '\0')
+      {
+         glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, *p++);
+      }
+   }
+   break;
    }
 }
 //Comentario final
@@ -1208,6 +1237,7 @@ void Desenha(void)
    case 2:
       tempo = 35; //Nivel 2, velocidade dos carros
       Mix_PlayChannel(-1, transito, 0);
+      nivel = 2;
       glClear(GL_COLOR_BUFFER_BIT);
       Pista();
       Colisao();
@@ -1235,6 +1265,7 @@ void Desenha(void)
    case 4:
       tempo = 50; //Nivel 3, velocidade dos carros
       Mix_PlayChannel(-1, transito, 0);
+      nivel = 3;
       glClear(GL_COLOR_BUFFER_BIT);
       Pista();
       Colisao();
